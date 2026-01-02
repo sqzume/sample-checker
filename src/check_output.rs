@@ -48,10 +48,12 @@ fn check_main(sample_path: &str, sample_num: usize) -> Result<(), Box<dyn std::e
 }
 
 pub fn run(problem: &str) -> Result<(), Box<dyn std::error::Error>> {
-    // let files_num = count_files(problem)? / 2;
+    let files_num = count_files(problem)? / 2;
     let path = format!("tests/{}", problem);
 
-    check_main(&path, 1)?;
+    for i in 1..=files_num {
+        check_main(&path, i)?;
+    }
 
     Ok(())
 }
