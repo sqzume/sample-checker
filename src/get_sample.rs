@@ -55,6 +55,11 @@ fn get_contest_sample(url: &str, dir_path: &str) -> Result<(), Box<dyn std::erro
 }
 
 pub fn run(arg: &str) -> Result<(), Box<dyn std::error::Error>> {
+    // 既存のディレクトリを削除
+    if std::path::Path::new("tests").exists() {
+        fs::remove_dir_all("tests")?;
+    }
+
     // ディレクトリを作成
     fs::create_dir_all("tests")?;
 
