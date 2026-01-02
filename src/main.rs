@@ -13,7 +13,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         process::exit(1);
     }
 
-    if args[1] == "g" {
+    if args[1] == "n" {
         get_sample::run(&args[2])?;
     }
 
