@@ -40,8 +40,10 @@ fn check_main(sample_path: &str, sample_num: usize) -> Result<(), Box<dyn std::e
     // sample と実行結果を比較して、"AC" or "WA" を出力する
     if output_content.trim() == String::from_utf8_lossy(&output.stdout).trim() {
         println!("{}{}{}", "\x1b[32m", "AC", "\x1b[0m");
+        println!();
     } else {
         println!("{}{}{}", "\x1b[31m", "WA", "\x1b[0m");
+        println!();
     }
 
     Ok(())
